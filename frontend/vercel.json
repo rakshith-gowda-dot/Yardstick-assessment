@@ -4,16 +4,18 @@
     {
       "src": "package.json",
       "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
+      "config": {
+        "distDir": "dist"
+      }
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "handle": "filesystem"
+    },
+    {
+      "src": "/.*",
       "dest": "/index.html"
     }
-  ],
-  "env": {
-    "VITE_API_URL": "https://your-backend-url.vercel.app"
-  }
+  ]
 }
