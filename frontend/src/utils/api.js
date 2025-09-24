@@ -1,17 +1,13 @@
 import axios from 'axios';
 
-// Use environment variable for backend URL
-const API_BASE_URL =
-  import.meta.env.VITE_API_URL || 'http://localhost:3001';
+// Use environment variable or fallback to your actual backend URL
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://yardstick-assessment-five.vercel.app';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
-  headers: {
-    'Content-Type': 'application/json',
-  },
 });
 
-// Attach JWT token to all requests if present
+// Add token to requests
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
   if (token) {
@@ -20,14 +16,14 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-// Handle token expiration / unauthorized
+// Handle token expiration
 api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
       localStorage.removeItem('token');
       localStorage.removeItem('user');
-      window.location.href = '/login';
+      window.location.href = '/';
     }
     return Promise.reject(error);
   }
