@@ -2,10 +2,6 @@
 
 A multi-tenant SaaS notes application built with React.js frontend and Node.js/Express backend, deployed on Vercel.
 
-## Live Demo
-**Frontend:** [https://yardstick-notes.vercel.app](https://yardstick-notes.vercel.app)  
-**Backend API:** [https://yardstick-backend.vercel.app](https://yardstick-backend.vercel.app)
-
 ## Assignment Requirements Checklist
 - [x] Multi-Tenancy Support - Acme and Globex corporations  
 - [x] Strict Tenant Isolation - Data never accessible between tenants  
