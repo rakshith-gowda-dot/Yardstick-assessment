@@ -85,6 +85,7 @@ All accounts use password: `password`
   iat: timestamp,
   exp: timestamp
 }
+```
 Role-Based Permissions
 
 Role	Notes CRUD	Upgrade Plan	User Management
@@ -111,26 +112,22 @@ Upgrade Endpoint: POST /tenants/:slug/upgrade (Admin only)
 API Documentation
 Base URL
 
-arduino
-Copy code
+
 https://yardstick-backend.vercel.app
 Health Check
 
-bash
-Copy code
+
+
 GET /health
 Response: { "status": "ok", "message": "Server is healthy", "timestamp": "..." }
 Authentication
 
-css
-Copy code
 POST /auth/login
 Body: { "email": "user@tenant.test", "password": "password" }
 Response: { "token": "jwt-token", "user": { ... } }
 Notes Management
 
-bash
-Copy code
+
 GET    /notes           # List all notes for current tenant
 POST   /notes           # Create new note
 GET    /notes/:id       # Get specific note
@@ -138,8 +135,7 @@ PUT    /notes/:id       # Update note
 DELETE /notes/:id       # Delete note
 Tenant Management
 
-ruby
-Copy code
+
 POST /tenants/:slug/upgrade  # Upgrade tenant to Pro plan (Admin only)
 Deployment Architecture
 Backend (Vercel Serverless Functions)
@@ -167,21 +163,22 @@ Node.js 16+
 npm or yarn
 
 Backend Setup
-bash
-Copy code
+```
 cd backend
 npm install
 npx prisma generate
 npx prisma db push
 node prisma/seed.js
 npm run dev
+```
 # Server runs on http://localhost:3001
 Frontend Setup
-bash
+```
 Copy code
 cd frontend
 npm install
 npm run dev
+```
 # App runs on http://localhost:3000
 Testing the Application
 Automated Test Scenarios
