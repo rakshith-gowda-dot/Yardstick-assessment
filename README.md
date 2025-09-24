@@ -213,8 +213,7 @@ Input Validation: Request body validation
 Error Handling: Secure error messages
 
 Project Structure
-graphql
-Copy code
+```
 yardstick-assessment/
 ├── backend/
 │   ├── prisma/
@@ -246,6 +245,7 @@ yardstick-assessment/
 │   │   └── App.jsx                # Root component
 │   └── vercel.json                # Frontend deployment
 └── README.md
+```
 Key Features Demonstrated
 Multi-Tenant Architecture: Complete data isolation between companies
 
